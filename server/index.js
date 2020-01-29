@@ -6,7 +6,7 @@ const server = express();
 config(server);
 
 server.get("/", (req, res) => {
-  res.status(200).json({ api: "running" });
+  res.status(200).json({ message: "Server is running." });
 });
 
 const port = 9001;
