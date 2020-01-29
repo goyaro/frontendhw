@@ -13,7 +13,8 @@ function generateDoctors() {
       name: `Dr ${faker.name.firstName()} ${faker.name.lastName()}`,
       facility: `${faker.company.companyName()} Hospital`,
       price: faker.finance.amount(1000, 10000, 2, "$"),
-      bio: faker.lorem.sentences()
+      bio: faker.lorem.sentences(),
+      picture: faker.image.avatar()
     });
   }
   return doctors;
@@ -33,20 +34,23 @@ const categories = [
     id: 1,
     name: "Rhinoplasty",
     lowestPrice: priceRange().lowest,
-    highestPrice: priceRange().highest
+    highestPrice: priceRange().highest,
+    numDocs: doctors.filter(d => d.categoryId === 1).length
   },
   {
     id: 2,
     name: "Hemorrhoidectomy",
     lowestPrice: priceRange().lowest,
-    highestPrice: priceRange().highest
+    highestPrice: priceRange().highest,
+    numDocs: doctors.filter(d => d.categoryId === 2).length
   },
   {
     id: 3,
     name: "Cholecystectomy",
     lowestPrice: priceRange().lowest,
-    highestPrice: priceRange().highest
+    highestPrice: priceRange().highest,
+    numDocs: doctors.filter(d => d.categoryId === 3).length
   }
 ];
 
-export { doctors, categories };
+module.exports = { doctors, categories };
