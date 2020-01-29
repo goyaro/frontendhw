@@ -53,4 +53,10 @@ This is a REST api which you can use to retrieve information regarding surgery c
 }
 ```
 
-## Usage
+## Usage and routes
+
+- This api is read-only.
+- There are three routes available to you: `/categories`, `/doctors`, and `/doctors/:categoryId`
+- **GET** request to `/categories` to retrieve a list of available categories of surgery.
+- **GET** request to `/doctors` to retrieve the list of all available doctors.
+- **GET** request to `/doctors/:categoryId` to retrive a list of all doctors which specialize in the `categoryId` that you include in the request parameters. The server will send a 404 error if there is no category that matches the `categoryId`.
