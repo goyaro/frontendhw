@@ -10,7 +10,7 @@ function generateDoctors() {
     doctors.push({
       id: i,
       categoryId: randomId(),
-      name: `Dr ${faker.name.firstName()} ${faker.name.lastName()}`,
+      name: `Dr. ${faker.name.firstName()} ${faker.name.lastName()}`,
       facility: `${faker.company.companyName()} Hospital`,
       price: faker.finance.amount(1000, 10000, 2, "$"),
       bio: faker.lorem.sentences(),
