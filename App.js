@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, SafeAreaView } from "react-native";
 import { NativeRouter, Switch, Route } from "react-router-native";
-import { CategoryPage } from "./components";
-import Other from "./components/Other";
+import { CategoryPage, DoctorPage } from "./components";
 
 export default class App extends Component {
   render() {
@@ -15,7 +14,11 @@ export default class App extends Component {
               path="/"
               render={props => <CategoryPage {...props} />}
             />
-            <Route exact path="/other" render={props => <Other {...props} />} />
+            <Route
+              exact
+              path="/doctors/:id"
+              render={props => <DoctorPage {...props} />}
+            />
           </Switch>
         </SafeAreaView>
       </NativeRouter>
@@ -28,15 +31,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center"
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: "center",
-    margin: 10
-  },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
   }
 });
